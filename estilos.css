@@ -1,1 +1,163 @@
+/* --- Variables de Color y Estilos Base --- */
+:root {
+    --color-azul-oscuro: #0d47a1;
+    --color-azul-claro: #42a5f5;
+    --color-beige-fondo: #f5f5f5;
+    --color-beige-claro: #fffde7;
+    --color-aprobado: #2e7d32;
+    --color-texto-principal: #212121;
+    --color-texto-secundario: #ffffff;
+    --color-bloqueado: #bdbdbd;
+    --color-error: #c62828;
+}
 
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--color-beige-fondo);
+    color: var(--color-texto-principal);
+    margin: 0;
+    padding: 20px;
+    background-image: url('https://www.transparenttextures.com/patterns/ice-age.png'); /* Textura sutil de pingüino/hielo */
+}
+
+/* --- Encabezado --- */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    color: var(--color-azul-oscuro);
+    font-size: clamp(2em, 5vw, 2.8em);
+    font-weight: 700;
+}
+
+header p {
+    color: var(--color-azul-claro);
+    font-size: clamp(1em, 2vw, 1.1em);
+}
+
+/* --- Contenedor Principal de la Malla --- */
+#malla-curricular {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 20px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-azul-claro) var(--color-beige-fondo);
+}
+
+/* --- Columnas de Semestre --- */
+.semestre {
+    flex: 0 0 280px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+/* Colores alternados para las columnas */
+.semestre:nth-child(odd) { /* Columnas impares: color beige */
+    background-color: var(--color-beige-claro);
+}
+.semestre:nth-child(even) { /* Columnas pares: color azul */
+    background-color: var(--color-azul-claro);
+}
+
+.semestre h2 {
+    text-align: center;
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid;
+    font-weight: 700;
+}
+.semestre:nth-child(odd) h2 {
+    color: var(--color-azul-oscuro);
+    border-bottom-color: var(--color-azul-claro);
+}
+.semestre:nth-child(even) h2 {
+    color: var(--color-texto-secundario);
+    border-bottom-color: var(--color-texto-secundario);
+}
+
+/* --- Tarjetas de Ramo --- */
+.ramo {
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-weight: 400;
+    border: 1px solid transparent;
+}
+.semestre:nth-child(odd) .ramo {
+    background-color: #ffffff;
+    border-color: #eeeeee;
+}
+.semestre:nth-child(even) .ramo {
+    background-color: var(--color-beige-claro);
+    color: var(--color-texto-principal);
+}
+
+/* --- Estados de los Ramos --- */
+.ramo:not(.bloqueado):hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.ramo.aprobado {
+    background-color: var(--color-aprobado) !important;
+    color: white !important;
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+    font-weight: 700;
+}
+
+.ramo.bloqueado {
+    background-color: #eeeeee !important;
+    color: var(--color-bloqueado) !important;
+    opacity: 0.7;
+    cursor: not-allowed;
+    border: 1px dashed var(--color-bloqueado);
+}
+
+/* --- Popup de Mensajes --- */
+#mensaje-popup {
+    position: fixed;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-azul-oscuro);
+    color: var(--color-texto-secundario);
+    padding: 15px 30px;
+    border-radius: 50px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+    font-size: 1.1em;
+    font-weight: 700;
+    text-align: center;
+    transition: bottom 0.5s ease-in-out;
+}
+
+#mensaje-popup.visible {
+    bottom: 20px;
+}
+
+#mensaje-popup.error {
+    background-color: var(--color-error);
+}
+
+/* --- Diseño Responsivo --- */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    #malla-curricular {
+        padding: 10px;
+    }
+    .semestre {
+        flex: 0 0 250px;
+    }
+}
