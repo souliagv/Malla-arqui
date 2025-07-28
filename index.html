@@ -1,1 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malla Curricular Interactiva - Arquitectura</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
+    <header>
+        <h1>Malla Curricular Arquitectura 🐧</h1>
+        <p>Haz clic en un ramo para marcar tu progreso. ¡Tú puedes!</p>
+    </header>
+
+    <main id="malla-curricular">
+        <div class="semestre" data-semestre="1">
+            <h2>Semestre I</h2>
+            <div class="ramo" id="t1" data-requisitos="">Taller 1</div>
+            <div class="ramo" id="hch" data-requisitos="">Historia, cultura y habitar</div>
+            <div class="ramo" id="geo" data-requisitos="">Geometría</div>
+            <div class="ramo" id="mat" data-requisitos="">Matemática</div>
+        </div>
+
+        <div class="semestre" data-semestre="2">
+            <h2>Semestre II</h2>
+            <div class="ramo" id="t2" data-requisitos="t1,ie">Taller 2</div>
+            <div class="ramo" id="fa" data-requisitos="hch">Fundamentos de la arquitectura</div>
+            <div class="ramo" id="ie" data-requisitos="">Investigación del entorno</div>
+            <div class="ramo" id="fis" data-requisitos="geo,mat">Física</div>
+        </div>
+
+        <div class="semestre" data-semestre="3">
+            <h2>Semestre III</h2>
+            <div class="ramo" id="t3" data-requisitos="t2">Taller 3</div>
+            <div class="ramo" id="cac" data-requisitos="fa">Cultura de la arquitectura clásica</div>
+            <div class="ramo" id="su" data-requisitos="ie">Sostenibilidad urbana</div>
+            <div class="ramo" id="mem" data-requisitos="fis">Morfología, estructura y materialización</div>
+            <div class="ramo" id="phs" data-requisitos="mem">Principios de habitabilidad y sostenibilidad</div>
+            <div class="ramo" id="i2" data-requisitos="">Inglés 2</div>
+        </div>
+        
+        <div class="semestre" data-semestre="4">
+            <h2>Semestre IV</h2>
+            <div class="ramo" id="t4" data-requisitos="t3">Taller 4</div>
+            <div class="ramo" id="pam" data-requisitos="cac">Problemas de la arquitectura moderna</div>
+            <div class="ramo" id="mpu" data-requisitos="su">Métodos y prácticas del urbanismo</div>
+            <div class="ramo" id="dm" data-requisitos="mem">Diseño y materialización</div>
+            <div class="ramo" id="i3" data-requisitos="i2">Inglés 3</div>
+        </div>
+
+        <div class="semestre" data-semestre="5">
+            <h2>Semestre V</h2>
+            <div class="ramo" id="t5" data-requisitos="t4">Taller 5</div>
+            <div class="ramo" id="carlc" data-requisitos="pam">Crítica de la arquitectura, La realidad latinoamericana y chilena</div>
+            <div class="ramo" id="piut" data-requisitos="mpu">Problematización e intervención urbano territorial</div>
+            <div class="ramo" id="dgp" data-requisitos="dm">Diseño y gestión de proyectos</div>
+            <div class="ramo" id="as" data-requisitos="dm">Arquitectura y sismo</div>
+            <div class="ramo" id="i4" data-requisitos="i3">Inglés 4</div>
+        </div>
+
+        <div class="semestre" data-semestre="6">
+            <h2>Semestre VI</h2>
+            <div class="ramo" id="t6" data-requisitos="t5">Taller 6</div>
+            <div class="ramo" id="mi" data-requisitos="">Metodologías de investigación</div>
+            <div class="ramo" id="ee1" data-requisitos="">Electivo de especialización 1</div>
+            <div class="ramo" id="ee2" data-requisitos="">Electivo de especialización 2</div>
+            <div class="ramo" id="ee3" data-requisitos="">Electivo de especialización 3</div>
+            <div class="ramo" id="ee4" data-requisitos="">Electivo de especialización 4</div>
+        </div>
+
+        <div class="semestre" data-semestre="7">
+            <h2>Semestre VII</h2>
+            <div class="ramo" id="t7" data-requisitos="t6">Taller 7</div>
+            <div class="ramo" id="fms" data-requisitos="mi">Formulación metodológica de seminario</div>
+            <div class="ramo" id="ee5" data-requisitos="">Electivo de especialización 5</div>
+            <div class="ramo" id="ee6" data-requisitos="">Electivo de especialización 6</div>
+            <div class="ramo" id="ee7" data-requisitos="">Electivo de especialización 7</div>
+            <div class="ramo" id="ee8" data-requisitos="">Electivo de especialización 8</div>
+            <div class="ramo" id="ee9" data-requisitos="">Electivo de especialización 9</div>
+        </div>
+
+        <div class="semestre" data-semestre="8">
+            <h2>Semestre VIII</h2>
+            <div class="ramo" id="t8" data-requisitos="t7">Taller 8</div>
+            <div class="ramo" id="sl" data-requisitos="fms">Seminario de licenciatura</div>
+        </div>
+
+        <div class="semestre" data-semestre="9">
+            <h2>Semestre IX</h2>
+            <div class="ramo" id="pp" data-requisitos="sl,t8">Práctica Profesional</div>
+        </div>
+
+        <div class="semestre" data-semestre="10">
+            <h2>Semestre X</h2>
+            <div class="ramo" id="pipt" data-requisitos="pp">Planteamiento integral del problema de título</div>
+            <div class="ramo" id="op" data-requisitos="pp">Optativos de profundización</div>
+        </div>
+        
+        <div class="semestre" data-semestre="11">
+            <h2>Semestre XI</h2>
+            <div class="ramo" id="ptt" data-requisitos="op,pipt">Proyecto o tesis de título</div>
+        </div>
+    </main>
+
+    <div id="mensaje-popup"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
